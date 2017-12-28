@@ -1,0 +1,21 @@
+- models:
+  user
+    - role
+      name
+      password
+      status
+  message
+    - title
+      part of:
+        - topic
+  topic
+    - title
+      list of messages
+
+
+- templates:
+  user listing 
+  user editing
+
+  message writing
+  topic showing (message listing)
