@@ -12,7 +12,7 @@ public class Message extends AbstractPersistable<Long> {
     private Long id;
 
     @ManyToOne
-    private User author;
+    private Account author;
 
     @Override
     public Long getId() {
