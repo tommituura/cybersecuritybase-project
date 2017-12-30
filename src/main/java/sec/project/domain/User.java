@@ -10,6 +10,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
@@ -20,6 +21,7 @@ public class User extends AbstractPersistable<Long> {
 
     private String username;
     private String password;
+    private String passwordConfirm;
     private Set<Role> roles;
 
     private List<Topic> topics;
@@ -69,6 +71,15 @@ public class User extends AbstractPersistable<Long> {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    @Transient
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
     }
     
     @ManyToMany
