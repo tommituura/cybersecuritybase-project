@@ -25,7 +25,7 @@ public class UserController {
         List<String> usernames = new ArrayList<>();
 
         for (Account user : users) {
-            usernames.add(user.getUserName());
+            usernames.add(user.getUsername());
         }
 
         model.addAttribute("usernames", usernames);
