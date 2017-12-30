@@ -1,4 +1,4 @@
-package sec.procect.service;
+package sec.project.service;
 
 import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;

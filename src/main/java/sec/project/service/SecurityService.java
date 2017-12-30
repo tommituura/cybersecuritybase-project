@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sec.procect.service;
+package sec.project.service;
 
 public interface SecurityService {
     String findLoggedInUsername();

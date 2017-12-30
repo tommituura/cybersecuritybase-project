@@ -1,4 +1,4 @@
-package sec.procect.service;
+package sec.project.service;
 
 import sec.project.domain.User;
 

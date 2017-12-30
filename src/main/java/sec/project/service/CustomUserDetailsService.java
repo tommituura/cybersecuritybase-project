@@ -1,4 +1,4 @@
-package sec.procect.service;
+package sec.project.service;
 
 import java.util.Arrays;
 import java.util.HashSet;

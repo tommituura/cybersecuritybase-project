@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import sec.procect.service.UserService;
+import sec.project.service.UserService;
 import sec.project.domain.User;
 
 @Component
