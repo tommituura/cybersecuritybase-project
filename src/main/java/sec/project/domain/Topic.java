@@ -12,7 +12,7 @@ public class Topic extends AbstractPersistable<Long> {
     private Long id;
     
     @ManyToOne
-    private Account author;
+    private User author;
     
     public Topic(Message firstMessage) {
         

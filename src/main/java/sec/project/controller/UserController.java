@@ -9,22 +9,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import sec.project.domain.Account;
-import sec.project.repository.AccountRepository;
+import sec.project.domain.User;
+import sec.project.repository.UserRepository;
 
 @Controller
 public class UserController {
     
     @Autowired
-    private AccountRepository userRepository;
+    private UserRepository userRepository;
     
     @RequestMapping("/users")
     public String listUserNames(Model model) {
-        List<Account> users = userRepository.findAll();
+        List<User> users = userRepository.findAll();
         
         List<String> usernames = new ArrayList<>();
 
-        for (Account user : users) {
+        for (User user : users) {
             usernames.add(user.getUsername());
         }
 
