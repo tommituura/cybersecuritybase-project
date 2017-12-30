@@ -1,5 +1,6 @@
 package sec.project.service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,18 @@ public class CustomUserService implements UserService {
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
+    }
+    
+    @Override
+    public List<String> listUsernames(){
+        List<User> users = userRepository.findAll();
+        
+        List<String> usernames = new ArrayList<>();
+
+        for (User user : users) {
+            usernames.add(user.getUsername());
+        }
+
+        return usernames;
     }
 }

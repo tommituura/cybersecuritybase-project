@@ -14,7 +14,7 @@ public class SignupController {
     @Autowired
     private SignupRepository signupRepository;
 
-    @RequestMapping("*")
+    @RequestMapping("/oldindex")
     public String defaultMapping() {
         return "redirect:/form";
     }

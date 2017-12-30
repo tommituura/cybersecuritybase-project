@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main page</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
-        <div>This is the Unsecure forum.</div>
-        
-        
-        
+        <h2>This is the Unsecure forum.</h2>
+
         <div>Users:  </div>
-        
+        <th:block th:each="username : ${usernames}">
+            <div th:text="${username}">...</div>
+        </th:block>
         <div>
-            <a href="/register">Register</a>
+            <a href="/registration">Register</a>
         </div>
         
         <div>Topics:</div>
+        <th:block th:each="topic : ${topics}">
+            <div th:text="${topic.getTitle()}">...</div>
+        </th:block>
     </body>
 </html>
