@@ -16,19 +16,24 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 @Table(name = "users")
 public class User extends AbstractPersistable<Long> {
-    
+    @Id
     private Long id;
 
     private String username;
     private String password;
+    @Transient
     private String passwordConfirm;
+    @ManyToMany
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+
     private Set<Role> roles;
 
+    @OneToMany(mappedBy="author")
     private List<Topic> topics;
 
+    @OneToMany(mappedBy="author")
     private List<Message> messages;
     
-    @Id
     @Override
     public Long getId() {
         return id;
@@ -43,7 +48,6 @@ public class User extends AbstractPersistable<Long> {
         this.topics = topics;
     }
     
-    @OneToMany(mappedBy="author")
     public List<Topic> getTopics() {
         return this.topics;
     }
@@ -52,7 +56,6 @@ public class User extends AbstractPersistable<Long> {
         this.messages = messages;
     }
     
-    @OneToMany(mappedBy="author")
     public List<Message> getMessages() {
         return this.messages;
     }
@@ -73,7 +76,6 @@ public class User extends AbstractPersistable<Long> {
         this.password = password;
     }
     
-    @Transient
     public String getPasswordConfirm() {
         return passwordConfirm;
     }
@@ -82,8 +84,6 @@ public class User extends AbstractPersistable<Long> {
         this.passwordConfirm = passwordConfirm;
     }
     
-    @ManyToMany
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     public Set<Role> getRoles() {
         return roles;
     }

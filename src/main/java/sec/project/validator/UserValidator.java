@@ -9,7 +9,7 @@ import sec.project.service.UserService;
 import sec.project.domain.User;
 
 @Component
-public class UserValidator implements Validator {
+public class UserValidator implements Validator {   
     @Autowired
     private UserService userService;
 
